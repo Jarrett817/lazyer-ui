@@ -1,25 +1,28 @@
 <template>
-<button @click="toggle" :class="{checked}">
+<button @click="toggle" :class="{checked:value}">
     <span></span>
+    <div></div>
 </button>
 </template>
 
 <script>
 import {
     ref
-} from 'vue'
+} from "vue";
 export default {
-    setup() {
-        const checked = ref(false)
+    props: {
+        value: Boolean,
+    },
+    setup(props, context) {
         const toggle = () => {
-            checked.value = !checked.value
-        }
+            // 上下文对象添加input事件，传值可在子组件中用$event获取
+            context.emit("input", !props.value);
+        };
         return {
-            checked,
-            toggle
-        }
-    }
-}
+            toggle,
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -28,7 +31,7 @@ $h2: $h - 4px;
 
 button {
     height: $h;
-    width: $h * 2;
+    width: $h*2;
     border: none;
     background: grey;
     border-radius: $h/2;
@@ -42,8 +45,8 @@ span {
     height: $h2;
     width: $h2;
     background: white;
-    border-radius: $h / 2;
-    transition: left 250s;
+    border-radius: $h/2;
+    transition: left 250ms;
 }
 
 button.checked {
@@ -56,6 +59,6 @@ button.checked>span {
 
 // 去除按钮周边的线
 button:focus {
-    outline: none
+    outline: none;
 }
 </style>
