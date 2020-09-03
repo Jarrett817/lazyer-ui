@@ -16,7 +16,7 @@ export default {
     setup(props, context) {
         const toggle = () => {
             // 上下文对象添加input事件，传值可在子组件中用$event获取
-            context.emit("input", !props.value);
+            context.emit("update:value", !props.value);
         };
         return {
             toggle,
