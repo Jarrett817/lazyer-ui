@@ -43,6 +43,7 @@ span {
     width: $h2;
     background: white;
     border-radius: $h / 2;
+    transition: left 250s;
 }
 
 button.checked {
@@ -51,5 +52,10 @@ button.checked {
 
 button.checked>span {
     left: calc(100% - #{$h2} - 2px);
+}
+
+// 去除按钮周边的线
+button:focus {
+    outline: none
 }
 </style>
