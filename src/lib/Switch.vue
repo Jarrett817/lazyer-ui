@@ -33,7 +33,7 @@ button {
     height: $h;
     width: $h*2;
     border: none;
-    background: grey;
+    background: #bfbfbf;
     border-radius: $h/2;
     position: relative;
 }
@@ -46,15 +46,28 @@ span {
     width: $h2;
     background: white;
     border-radius: $h/2;
-    transition: left 250ms;
+    transition: all 250ms;
 }
 
 button.checked {
-    background: blue;
+    background: #1890ff;
 }
 
 button.checked>span {
     left: calc(100% - #{$h2} - 2px);
+}
+
+button:active {
+    >span {
+        width: $h2 + 4px;
+    }
+}
+
+button.checked:active {
+    >span {
+        width: $h2 + 4px;
+        margin-left: -4px;
+    }
 }
 
 // 去除按钮周边的线
