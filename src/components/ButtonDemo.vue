@@ -1,23 +1,30 @@
 <template>
+<div>Button示例</div>
+<h1>示例一</h1>
 <div>
-    Button示例
+    <Button>你好</Button>
+    <Button theme="button">你好</Button>
+    <Button theme="link">你好</Button>
+    <Button theme="text">你好</Button>
 </div>
-<Button>你好</Button>
-<Button theme="button">你好</Button>
-<Button theme="link">你好</Button>
-<Button theme="text">你好</Button>
+<h1>示例二</h1>
+<div>
+    <Button>你好</Button>
+    <Button size="big">你好</Button>
+    <Button size="small">你好</Button>
+</div>
 </template>
 
 <script lang="ts">
-import Button from '../lib/Button.vue'
+import Button from "../lib/Button.vue";
 export default {
     components: {
-        Button
+        Button,
     },
     setup() {
         const onClick = () => {
-            console.log('hi')
-        }
-    }
-}
+            console.log("hi");
+        };
+    },
+};
 </script>

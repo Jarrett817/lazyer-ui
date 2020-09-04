@@ -1,6 +1,6 @@
 <template>
 <!--<div :size="size">-->
-<button class="banana-button" :class="{[`theme-${theme}`]:theme}">
+<button class="banana-button" :class="classes">
     <!-- <button v-bind="$attrs">-->
     <!--插槽传值 -->
     <slot />
@@ -27,24 +27,36 @@ props需要
 */
 
 <script lang="ts">
+import {
+    computed
+} from "vue";
 export default {
     // 防止定义在button外层元素
     inheritAttrs: false,
     props: {
         theme: {
             type: String,
-            default: "button"
-        }
+            default: "button",
+        },
+        size: {
+            type: String,
+            default: "normal",
+        },
     },
     setup(props, context) {
-        // const {
-        //     size,
-        //     ...rest
-        // } = context.attrs;
-        // return {
-        //     size,
-        //     rest,
-        // };
+        const {
+            theme,
+            size
+        } = props;
+        const classes = computed(() => {
+            return {
+                [`banana-theme-${theme}`]: theme,
+                [`banana-size-${size}`]: size,
+            };
+        });
+        return {
+            classes,
+        };
     },
 };
 </script>
@@ -86,6 +98,42 @@ $radius: 4px;
 
     &::-moz-focus-inner {
         border: 0;
+    }
+
+    &.banana-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color: $blue;
+
+        &:hover,
+        &:focus {
+            color: lighten($blue, 10%);
+        }
+    }
+
+    &.banana-theme-text {
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            background: darken(white, 5%);
+        }
+    }
+
+    &.banana-theme-button {
+        &.banana-size-big {
+            font-size: 24px;
+            height: 48px;
+            padding: 0 16px;
+        }
+
+        &.banana-size-small {
+            font-size: 12px;
+            height: 20px;
+            padding: 0 4px;
+        }
     }
 }
 </style>
