@@ -41,6 +41,11 @@
         <Button theme="text" level="danger">危险文字按钮</Button>
     </dir>
 </div>
+<h1>示例4</h1>
+<div>
+    <Button disabled>Hi</Button>
+    <Button :disabled="true">Hi</Button>
+</div>
 </template>
 
 <script lang="ts">

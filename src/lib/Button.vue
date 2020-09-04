@@ -1,6 +1,6 @@
 <template>
 <!--<div :size="size">-->
-<button class="banana-button" :class="classes">
+<button class="banana-button" :class="classes" :disabled="disabled">
     <!-- <button v-bind="$attrs">-->
     <!--插槽传值 -->
     <slot />
@@ -46,6 +46,10 @@ export default {
             type: String,
             default: "normal",
         },
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
     },
     setup(props, context) {
         const {
@@ -73,7 +77,8 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-$red:red;
+$red: red;
+$grey: grey;
 
 .banana-button {
     height: $h;
@@ -143,7 +148,6 @@ $red:red;
     }
 
     &.banana-theme-button {
-
         &.banana-level-main {
             background: $blue;
             color: white;
@@ -197,6 +201,25 @@ $red:red;
             &:focus {
                 color: darken($red, 10%);
             }
+        }
+    }
+
+    &.banana-theme-button {
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+    }
+
+    &.banana-theme-link,
+    &.banana-theme-text {
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
         }
     }
 }
