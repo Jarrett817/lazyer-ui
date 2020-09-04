@@ -1,14 +1,12 @@
 <template>
-<div :size="size">
-    <button v-bind="rest">
-        <!-- <button v-bind="$attrs">-->
-        <!--插槽传值 -->
-        <slot />
-    </button>
-</div>
+<!--<div :size="size">-->
+<button class="banana-button" :class="{[`theme-${theme}`]:theme}">
+    <!-- <button v-bind="$attrs">-->
+    <!--插槽传值 -->
+    <slot />
+</button>
 </template>
 
-<script lang="ts">
 /*
 默认所有属性绑定到根元素
 可以使用inheritAttrs:false取消默认绑定
@@ -27,18 +25,67 @@ props不包含事件，attrs包含
 props支持string以外的类型，attrs只有string
 props需要
 */
+
+<script lang="ts">
 export default {
     // 防止定义在button外层元素
     inheritAttrs: false,
+    props: {
+        theme: {
+            type: String,
+            default: "button"
+        }
+    },
     setup(props, context) {
-        const {
-            size,
-            ...rest
-        } = context.attrs;
-        return {
-            size,
-            rest,
-        };
+        // const {
+        //     size,
+        //     ...rest
+        // } = context.attrs;
+        // return {
+        //     size,
+        //     rest,
+        // };
     },
 };
 </script>
+
+<style lang="scss">
+$h: 32px;
+$border-color: #d9d9d9;
+$color: #333;
+$blue: #40a9ff;
+$radius: 4px;
+
+.banana-button {
+    height: $h;
+    padding: 0 12px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background: white;
+    color: $color;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    box-shadow: 0 1px 0 fade-out(black, 0.95);
+
+    &+& {
+        margin-left: 8px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $blue;
+        border-color: $blue;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+}
+</style>
