@@ -2,6 +2,7 @@
 <!--<div :size="size">-->
 <button class="banana-button" :class="classes" :disabled="disabled">
     <!-- <button v-bind="$attrs">-->
+    <span v-if="loading" class="banana-loadingIndicator"></span>
     <!--插槽传值 -->
     <slot />
 </button>
@@ -50,6 +51,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        loading: {
+            type: Boolean,
+            default: false
+        }
     },
     setup(props, context) {
         const {
@@ -174,7 +179,7 @@ $grey: grey;
     }
 
     &.banana-theme-link {
-        &.gulu-level-danger {
+        &.banana-level-danger {
             color: $red;
 
             &:hover,
@@ -185,7 +190,7 @@ $grey: grey;
     }
 
     &.banana-theme-text {
-        &.gulu-level-main {
+        &.banana-level-main {
             color: $blue;
 
             &:hover,
@@ -221,6 +226,28 @@ $grey: grey;
             cursor: not-allowed;
             color: $grey;
         }
+    }
+
+    >.banana-loadingIndicator {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-right: 4px;
+        border-radius: 8px;
+        border-color: $blue $blue $blue transparent;
+        border-style: solid;
+        border-width: 2px;
+        animation: banana-spin 1s infinite linear;
+    }
+}
+
+@keyframes banana-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
     }
 }
 </style>
