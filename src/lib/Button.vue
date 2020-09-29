@@ -33,7 +33,7 @@ import {
 } from "vue";
 export default {
     // 防止定义在button外层元素
-    inheritAttrs: false,
+    inheritAttrs: true,
     props: {
         theme: {
             type: String,

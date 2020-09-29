@@ -1,28 +1,30 @@
 <template>
   <template v-if="visible">
-    <div class="banana-dialog-overlay"></div>
-    <div class="banana-dialog-wrapper">
-      <div class="banana-dialog">
-        <header>
-          标题
-          <span class="banana-dialog-close"></span>
-        </header>
-        <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
-        </main>
-        <footer>
-          <Button>OK</Button>
-          <Button>cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="banana-dialog-overlay"
+           @click="onClickOverlay"></div>
+      <div class="banana-dialog-wrapper">
+        <div class="banana-dialog">
+          <header>
+            <slot name="title"></slot>
+            <span @click="close" class="banana-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
-</template>
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue";
+
 export default {
   // inheritAttrs: false,
   props: {
@@ -30,9 +32,41 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
   },
   components: {
     Button,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      props.cancel?.();
+      close();
+    };
+    const showDialog = () => {
+    };
+    return {close, onClickOverlay, ok, cancel, showDialog};
   },
 };
 </script>
