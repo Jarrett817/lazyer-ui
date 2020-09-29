@@ -11,20 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74905285-e672-4cd7-be4c-3b37af3aa607" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/demos/DialogDemo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/demos/TabsDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ButtonDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/demos/ButtonDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DialogDemo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SwitchDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/demos/SwitchDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabsDemo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Topnav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Topnav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Dialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/demos/SwitchDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/demos/SwitchDemo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Doc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Doc.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/GetStarted.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Install.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Intro.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/VS WorkPlace/video player/player2.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/demos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,7 +56,12 @@
     <property name="ts.external.directory.path" value="D:\Software\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\王俊然\Desktop\demos\wheel-ui-1\src\components\demos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\王俊然\Desktop\demos\wheel-ui-1" />
+      <recent name="C:\Users\王俊然\Desktop\demos\wheel-ui-1\src" />
       <recent name="C:\Users\王俊然\Desktop\demos\wheel-ui-1\src\components\demos" />
     </key>
   </component>
@@ -82,8 +82,17 @@
       <workItem from="1601184862742" duration="6556000" />
       <workItem from="1601260173080" duration="9503000" />
       <workItem from="1601348618885" duration="8362000" />
-      <workItem from="1601361248719" duration="1991000" />
+      <workItem from="1601361248719" duration="4865000" />
+      <workItem from="1601366272942" duration="6143000" />
     </task>
+    <task id="LOCAL-00001" summary="完成官网首页，搭好官网内容框架">
+      <created>1601363358532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601363358532</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -104,7 +113,19 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成官网首页，搭好官网内容框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成官网首页，搭好官网内容框架" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="573" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601364583032">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="573" y="358" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1601364583032" />
+    <state x="68" y="357" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601369560410">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="68" y="357" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1601369560410" />
     <state x="521" y="277" key="FileChooserDialogImpl" timestamp="1601260965268">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
