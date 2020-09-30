@@ -16,18 +16,12 @@ export default {
   props: {},
   setup() {
     const rippleElement = ref(null);
-
-    onMounted(() => {
-      console.log(rippleElement.value); // <div>这是跟元素</div>
-    });
-
     const isMobile = computed(() => {
       return !!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
     });
 
     const showRipple = (event) => {
       //创建一个span用来做波纹效果
-      // const ripple = document.createElement("span");
       const divWidth = rippleElement.value.offsetWidth;
       const divHeight = rippleElement.value.offsetHeight;
       //获取元素的大小
