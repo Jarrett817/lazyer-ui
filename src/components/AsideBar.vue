@@ -56,6 +56,7 @@ aside {
   height: 100%;
   box-shadow: .5px 0 .5px .5px rgba(0, 0, 0, 0.1);
   background:white;
+  z-index:1;
   > h2 {
     margin-bottom: 4px;
   }
