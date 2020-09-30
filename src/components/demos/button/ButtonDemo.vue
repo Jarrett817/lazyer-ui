@@ -6,6 +6,7 @@
     <Button theme="button">你好</Button>
     <Button theme="link">你好</Button>
     <Button theme="text">你好</Button>
+    <Button ripple>波纹</Button>
   </div>
   <h1>示例二</h1>
   <div>
@@ -55,7 +56,7 @@
 </template>
 
 <script lang="ts">
-import Button from "../../lib/Button.vue";
+import Button from "../../../lib/Button.vue";
 export default {
   components: {
     Button,
