@@ -1,6 +1,6 @@
 <template>
   <aside v-if="menuVisible">
-    <h2>文档</h2>
+    <h3><strong>文档</strong></h3>
     <ol>
       <li>
         <router-link to="/doc/intro">介绍</router-link>
@@ -12,7 +12,7 @@
         <router-link to="/doc/get-started">开始使用</router-link>
       </li>
     </ol>
-    <h2>组件列表</h2>
+    <h3><strong>组件列表</strong></h3>
     <ol>
       <li>
         <router-link to="/doc/switch">Switch</router-link>
@@ -56,7 +56,7 @@ aside {
   height: 100%;
   box-shadow: .5px 0 .5px .5px rgba(0, 0, 0, 0.1);
   background:white;
-  z-index:1;
+  z-index:2;
   > h2 {
     margin-bottom: 4px;
   }

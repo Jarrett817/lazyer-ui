@@ -1,5 +1,4 @@
-<demo> 示例2
-</demo>
+<demo>尺寸选项</demo>
 <template>
   <div>
     <Button size="big">大大大</Button>

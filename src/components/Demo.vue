@@ -1,14 +1,17 @@
 <template>
   <div class="demo">
-    <h2>{{ component.__sourceCodeTitle }}</h2>
     <div class="demo-component">
       <component :is="component"/>
     </div>
-    <div class="demo-actions">
-      <Button @click="toggleCode">查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre class="language-html" v-html="html"/>
+    <h5>{{ component.__sourceCodeTitle }}</h5>
+    <div class="description">
+      <div class="demo-actions">
+        <Button size="small" @click="hideCode" v-if="codeVisible">code</Button>
+        <Button size="small" @click="showCode" v-else>hide</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible">
+        <pre class="language-html" v-html="html"/>
+      </div>
     </div>
   </div>
 </template>
@@ -16,11 +19,13 @@
 <script lang="ts">
 import Button from "../lib/Button.vue";
 import "prismjs";
-import "../assets/css/prism.css";
+import "../assets/style/prism.css";
+import "../assets/style/prism-coy.css";
 import {
   computed,
   ref
 } from "vue";
+
 const Prism = (window as any).Prism;
 export default {
   components: {
@@ -33,13 +38,15 @@ export default {
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, "html");
     });
-    const toggleCode = () => codeVisible.value = !codeVisible.value;
+    const showCode = () => codeVisible.value = true;
+    const hideCode = () => codeVisible.value = false;
     const codeVisible = ref(false);
     return {
       Prism,
       html,
       codeVisible,
-      toggleCode
+      showCode,
+      hideCode
     };
   }
 };
@@ -51,29 +58,41 @@ $border-color: #d9d9d9;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
 
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+  > h5 {
+    position: relative;
+    color: grey;
+    background: white;
+    margin-bottom: -10px;
+    margin-left: 10px;
+    width:fit-content;
+    padding:0 16px;
+    z-index:1;
+    text-align: center;
   }
-
+  .description {
+    color: grey;
+    border-top: 1px dashed $border-color;
+  }
   &-component {
     padding: 16px;
   }
 
   &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
   }
 
   &-code {
     padding: 8px 16px;
-    border-top: 1px dashed $border-color;
+    //border-top: 1px dashed $border-color;
 
     > pre {
       line-height: 1.1;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
+      background: #f0f0f4;
     }
   }
 }

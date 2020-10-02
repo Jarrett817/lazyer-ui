@@ -1,8 +1,9 @@
 <template>
-  <div>Dialog示例</div>
-  <Demo :component="DialogDemo1"></Demo>
-  <Demo :component="DialogDemo2"></Demo>
-
+  <div>
+    <h2>Dialog对话弹框</h2>
+    <Demo :component="DialogDemo1"></Demo>
+    <Demo :component="DialogDemo2"></Demo>
+  </div>
 </template>
 
 <script lang="ts">

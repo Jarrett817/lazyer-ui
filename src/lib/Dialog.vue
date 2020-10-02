@@ -1,19 +1,19 @@
 <template>
   <template v-if="visible">
     <Teleport to="body">
-      <div class="banana-dialog-overlay"
+      <div class="lazyer-dialog-overlay"
            @click="onClickOverlay"></div>
-      <div class="banana-dialog-wrapper">
-        <div class="banana-dialog">
+      <div class="lazyer-dialog-wrapper">
+        <div class="lazyer-dialog">
           <header>
             <slot name="title"></slot>
-            <span @click="close" class="banana-dialog-close"></span>
+            <span @click="close" class="lazyer-dialog-close"></span>
           </header>
           <main>
             <slot name="content"></slot>
           </main>
           <footer>
-            <Button level="main" @click="ok">OK</Button>
+            <Button level="main" @click="ok">ok</Button>
             <Button @click="cancel">cancel</Button>
           </footer>
         </div>
@@ -44,7 +44,7 @@ export default {
     },
   },
   components: {
-    Button,
+    Button
   },
   setup(props, context) {
     const close = () => {
@@ -75,7 +75,7 @@ export default {
 $radius: 4px;
 $border-color: #d9d9d9;
 
-.banana-dialog {
+.lazyer-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);

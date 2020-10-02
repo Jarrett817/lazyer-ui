@@ -1,4 +1,4 @@
-<demo> 示例3</demo>
+<demo>状态等级</demo>
 <template>
   <div>
     <div>

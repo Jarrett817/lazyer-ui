@@ -1,4 +1,4 @@
-<demo>示例5</demo>
+<demo>加载状态</demo>
 <template>
   <div>
     <Button loading>加载中</Button>

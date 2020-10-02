@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .topNav {
   display: flex;
-  padding: 16px;
+  padding: 0 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -54,6 +54,8 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  background: rgb(216,235,248);
+  background: linear-gradient(145deg, rgba(216,235,248,1) 0%, rgba(227,242,252,1) 100%);
 
   & .logo {
     max-width: 8em;

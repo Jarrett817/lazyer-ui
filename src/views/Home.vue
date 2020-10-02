@@ -3,10 +3,12 @@
     <div class="topnavAndBanner">
       <Topnav/>
       <div class="banner">
-        <h1>For UI</h1>
-        <h2>一个简单易用的UI框架</h2>
+        <h1>Lazyer UI</h1>
+        <h4>一个简单易用的UI框架</h4>
+        <h4>精简的使用方式，简约的外观设计</h4>
+        <h4>低饱和色系尽享小情调</h4>
         <p class="actions">
-          <a>GitHub</a>
+          <a href="https://github.com/Jarrett817/lazyer-ui" target="_blank">GitHub</a>
           <router-link to="/doc/">Start</router-link>
         </p>
       </div>
@@ -50,9 +52,9 @@ export default {
 <style lang="scss" scoped>
 .topnavAndBanner {
 
-  background: rgb(216,235,248);
-  background: linear-gradient(145deg, rgba(216,235,248,1) 0%, rgba(227,242,252,1) 100%);
-   clip-path: ellipse(116% 60% at 14% 40%);
+  background: rgb(216, 235, 248);
+  background: linear-gradient(145deg, rgba(216, 235, 248, 1) 0%, rgba(227, 242, 252, 1) 100%);
+  clip-path: ellipse(116% 60% at 14% 40%);
   color: #4c4d5f;
 }
 
@@ -62,12 +64,12 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @media(max-width: 500px){
-    &{
+  @media(max-width: 500px) {
+    & {
       padding-left: 10px;
-
     }
   }
+
   > li {
     width: 400px;
     margin: 16px 0;
@@ -85,7 +87,7 @@ export default {
     }
 
     p {
-      grid-area:text ;
+      grid-area: text;
     }
 
     > svg {
@@ -105,6 +107,12 @@ export default {
   align-items: center;
   flex-direction: column;
 
+  > h4 {
+    color: grey;
+  }
+>h1{
+  padding-bottom: 2px;
+}
   > .actions {
     padding: 8px 0;
 

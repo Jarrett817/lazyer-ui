@@ -1,7 +1,7 @@
 <template>
-  <button class="banana-button" :class="classes" :disabled="disabled">
+  <button class="lazyer-button" :class="classes" :disabled="disabled">
     <!-- <button v-bind="$attrs">-->
-    <span v-if="loading" class="banana-loadingIndicator"></span>
+    <span v-if="loading" class="lazyer-loadingIndicator"></span>
     <slot/>
     <div class="rippleWrapper" v-if="ripple">
       <Ripple/>
@@ -72,9 +72,9 @@ export default {
     } = props;
     const classes = computed(() => {
       return {
-        [`banana-theme-${theme}`]: theme,
-        [`banana-size-${size}`]: size,
-        [`banana-level-${level}`]: level,
+        [`lazyer-theme-${theme}`]: theme,
+        [`lazyer-size-${size}`]: size,
+        [`lazyer-level-${level}`]: level,
       };
     });
     return {
@@ -85,12 +85,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import "lazyer.scss";
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
+$blue: $main-blue;
 $radius: 4px;
-$red: red;
+$red: $main-red;
 $grey: grey;
 
 
@@ -99,7 +100,7 @@ $grey: grey;
   height:100%;
   width:100%;
 }
-.banana-button {
+.lazyer-button {
   height: $h;
   padding: 0 12px;
   cursor: pointer;
@@ -132,7 +133,7 @@ $grey: grey;
     border: 0;
   }
 
-  &.banana-theme-link {
+  &.lazyer-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -143,7 +144,7 @@ $grey: grey;
     }
   }
 
-  &.banana-theme-text {
+  &.lazyer-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -154,20 +155,20 @@ $grey: grey;
     }
   }
 
-  &.banana-size-big {
+  &.lazyer-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
 
-  &.banana-size-small {
+  &.lazyer-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  &.banana-theme-button {
-    &.banana-level-main {
+  &.lazyer-theme-button {
+    &.lazyer-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -179,7 +180,7 @@ $grey: grey;
       }
     }
 
-    &.banana-level-danger {
+    &.lazyer-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -192,8 +193,8 @@ $grey: grey;
     }
   }
 
-  &.banana-theme-link {
-    &.banana-level-danger {
+  &.lazyer-theme-link {
+    &.lazyer-level-danger {
       color: $red;
 
       &:hover,
@@ -203,8 +204,8 @@ $grey: grey;
     }
   }
 
-  &.banana-theme-text {
-    &.banana-level-main {
+  &.lazyer-theme-text {
+    &.lazyer-level-main {
       color: $blue;
 
       &:hover,
@@ -213,7 +214,7 @@ $grey: grey;
       }
     }
 
-    &.banana-level-danger {
+    &.lazyer-level-danger {
       color: $red;
 
       &:hover,
@@ -223,7 +224,7 @@ $grey: grey;
     }
   }
 
-  &.banana-theme-button {
+  &.lazyer-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -234,15 +235,15 @@ $grey: grey;
     }
   }
 
-  &.banana-theme-link,
-  &.banana-theme-text {
+  &.lazyer-theme-link,
+  &.lazyer-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  > .banana-loadingIndicator {
+  > .lazyer-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -251,11 +252,11 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: banana-spin 1s infinite linear;
+    animation: lazyer-spin 1s infinite linear;
   }
 }
 
-@keyframes banana-spin {
+@keyframes lazyer-spin {
   0% {
     transform: rotate(0deg)
   }

@@ -1,4 +1,4 @@
-<demo>示例4</demo>
+<demo>禁用状态</demo>
 <template>
   <div>
     <Button disabled>禁用按钮</Button>
