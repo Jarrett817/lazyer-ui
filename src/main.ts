@@ -1,5 +1,5 @@
 // 先引入样式，后引入组件
-import './lib/banana.scss'
+import './lib/lazyer.scss'
 import './index.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
