@@ -1,5 +1,5 @@
 <template>
-  <button class="lazyer-button" :class="classes" :disabled="disabled">
+  <button ref="lazyerButtonEl" class="lazyer-button" :class="classes">
     <!-- <button v-bind="$attrs">-->
     <span v-if="loading" class="lazyer-loadingIndicator"></span>
     <slot/>
@@ -30,7 +30,7 @@ props需要
 
 <script lang="ts">
 import {
-  computed
+  computed, onMounted, ref
 } from "vue";
 import Ripple from "./Ripple.vue";
 
@@ -55,21 +55,23 @@ export default {
       type: String,
       default: "normal",
     },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
     loading: {
       type: Boolean,
       default: false
     }
   },
-  setup(props, context) {
+  setup(props) {
     const {
       theme,
       size,
       level
     } = props;
+    const lazyerButtonEl = ref(null);
+    onMounted(() => {
+      if (props.loading) {
+        lazyerButtonEl.value.disabled = true;
+      }
+    });
     const classes = computed(() => {
       return {
         [`lazyer-theme-${theme}`]: theme,
@@ -78,14 +80,15 @@ export default {
       };
     });
     return {
-      classes,
+      classes, lazyerButtonEl
     };
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "lazyer.scss";
+
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
@@ -95,11 +98,12 @@ $red: $main-red;
 $grey: grey;
 
 
-.rippleWrapper{
+.rippleWrapper {
   position: absolute;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 }
+
 .lazyer-button {
   height: $h;
   padding: 0 12px;
@@ -115,6 +119,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
   position: relative;
+
   & + & {
     margin-left: 8px;
   }
@@ -133,27 +138,6 @@ $grey: grey;
     border: 0;
   }
 
-  &.lazyer-theme-link {
-    border-color: transparent;
-    box-shadow: none;
-    color: $blue;
-
-    &:hover,
-    &:focus {
-      color: lighten($blue, 10%);
-    }
-  }
-
-  &.lazyer-theme-text {
-    border-color: transparent;
-    box-shadow: none;
-    color: inherit;
-
-    &:hover,
-    &:focus {
-      background: darken(white, 5%);
-    }
-  }
 
   &.lazyer-size-big {
     font-size: 24px;
@@ -168,6 +152,16 @@ $grey: grey;
   }
 
   &.lazyer-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+      color: $grey;
+
+      &:hover {
+        border-color: $grey;
+      }
+    }
+
     &.lazyer-level-main {
       background: $blue;
       color: white;
@@ -194,6 +188,15 @@ $grey: grey;
   }
 
   &.lazyer-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+
     &.lazyer-level-danger {
       color: $red;
 
@@ -205,6 +208,15 @@ $grey: grey;
   }
 
   &.lazyer-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+
     &.lazyer-level-main {
       color: $blue;
 
@@ -224,28 +236,17 @@ $grey: grey;
     }
   }
 
-  &.lazyer-theme-button {
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
-
-      &:hover {
-        border-color: $grey;
-      }
-    }
-  }
-
   &.lazyer-theme-link,
   &.lazyer-theme-text {
     &[disabled] {
       cursor: not-allowed;
-      color: $grey;
+      opacity: 0.5;
     }
   }
 
   > .lazyer-loadingIndicator {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
@@ -253,16 +254,17 @@ $grey: grey;
     border-style: solid;
     border-width: 2px;
     animation: lazyer-spin 1s infinite linear;
+    @keyframes lazyer-spin {
+      0% {
+        transform: rotate(0deg)
+      }
+
+      100% {
+        transform: rotate(360deg)
+      }
+    }
   }
 }
 
-@keyframes lazyer-spin {
-  0% {
-    transform: rotate(0deg)
-  }
 
-  100% {
-    transform: rotate(360deg)
-  }
-}
 </style>

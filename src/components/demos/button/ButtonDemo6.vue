@@ -3,7 +3,7 @@
   <div>
     <Button ripple>普通波纹</Button>
     <Button theme="link" ripple>链接波纹</Button>
-    <Button theme="text" ripple>波纹</Button>
+    <Button theme="text" ripple>文本波纹</Button>
   </div>
 </template>
 
