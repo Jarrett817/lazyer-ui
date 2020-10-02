@@ -1,8 +1,9 @@
 <demo>
-禁用状态
+加载状态
 </demo>
 <template>
-  <Switch v-model:value="bool" disabled/>
+  <Switch v-model:value="bool1" loading/>
+  <Switch v-model:value="bool2" loading/>
 </template>
 
 <script lang="ts">
@@ -18,9 +19,10 @@ export default {
   },
 
   setup() {
-    const bool = ref(false);
+    const bool1 = ref(false);
+    const bool2 = ref(true);
     return {
-      bool
+      bool1,bool2
     };
   }
 };

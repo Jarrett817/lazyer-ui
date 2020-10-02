@@ -1,28 +1,43 @@
 <template>
-  <button class="lazyer-switch" @click="toggle" :class="{'lazyer-checked':value}">
-    <span></span>
+  <button ref="lazyerSwitchButton" class="lazyer-switch" @click="toggle" :class="{'lazyer-checked':value}">
+    <span class="lazyer-dot">
+          <span v-if="loading" class="lazyer-switch-loadingIndicator"></span>
+    </span>
   </button>
 </template>
 
-<script>
+<script lang="ts">
+import {onMounted, ref} from "vue";
+
 export default {
   props: {
     value: Boolean,
+    loading: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
       // 上下文对象添加input事件，传值可在子组件中用$event获取
       context.emit("update:value", !props.value);
     };
+    const lazyerSwitchButton = ref(null);
+    onMounted(() => {
+      if (props.loading) {
+        lazyerSwitchButton.value.disabled = true;
+      }
+    });
     return {
-      toggle,
+      toggle,lazyerSwitchButton
     };
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "lazyer.scss";
+
 $h: 22px;
 $h2: $h - 4px;
 
@@ -33,6 +48,13 @@ $h2: $h - 4px;
   background: #bfbfbf;
   border-radius: $h/2;
   position: relative;
+
+  &+&{
+    left:10px;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+  }
 
   &:active {
     &::after {
@@ -50,7 +72,7 @@ $h2: $h - 4px;
         0% {
           opacity: 0;
           transform: scale(1);
-          background:inherit;
+          background: inherit;
         }
         100% {
           opacity: 1;
@@ -60,7 +82,7 @@ $h2: $h - 4px;
     }
   }
 
-  > span {
+  > span.lazyer-dot {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -69,12 +91,33 @@ $h2: $h - 4px;
     background: white;
     border-radius: $h/2;
     transition: all 250ms;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    .lazyer-switch-loadingIndicator {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      border-radius: 7px;
+      border-color: darkgrey transparent transparent transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: lazyer-spin 1s infinite linear;
+      @keyframes lazyer-spin {
+        0% {
+          transform: rotate(0deg)
+        }
+        100% {
+          transform: rotate(360deg)
+        }
+      }
+    }
   }
 
   &.lazyer-checked {
     background: $main-blue;
 
-    > span {
+    > span.lazyer-dot {
       left: calc(100% - #{$h2} - 2px);
     }
   }
@@ -91,10 +134,12 @@ $h2: $h - 4px;
   }
 
   &.lazyer-checked:active {
-    > span {
+    > span.lazyer-dot {
       width: $h2 + 4px;
       margin-left: -4px;
     }
   }
+
+
 }
 </style>
