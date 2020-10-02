@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import {computed, createApp, h, onMounted, ref} from "vue";
+import {computed, createApp, h, ref} from "vue";
 
 export default {
   props: {},
@@ -19,7 +19,6 @@ export default {
     const isMobile = computed(() => {
       return !!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
     });
-
     const showRipple = (event) => {
       //创建一个span用来做波纹效果
       const divWidth = lazyerRippleElement.value.offsetWidth;
@@ -39,16 +38,16 @@ export default {
       const x = clientX - pos.left - divWidth / 6;
       const y = clientY - pos.top - divHeight / 6;
       const style = `top:${y}px;left:${x}px;width:${divWidth / 3}px; height:${divHeight / 3}px;`;
-      const app = createApp({
+      const ripple = createApp({
         render() {
           return h("span", {style}
           );
         }
       });
-      app.mount(lazyerRippleElement.value);
+      ripple.mount(lazyerRippleElement.value);
       setTimeout(() => {
         //清除ripple
-        app.unmount(lazyerRippleElement.value);
+        ripple.unmount(lazyerRippleElement.value);
       }, 250);
     };
     return {
@@ -58,7 +57,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .lazyer-ripple-container {
   height: 100%;
   width: 100%;
@@ -70,8 +69,8 @@ export default {
   -webkit-user-select: none;
   -o-user-select: none;
   user-select: none;
-
-  & > span {
+  //加上v-deep才能选中动态生成的span
+  & > ::v-deep span {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,7 +83,7 @@ export default {
     @keyframes lazyer-ripple {
       from {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(0.5);
       }
       to {
         opacity: 0;

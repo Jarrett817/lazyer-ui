@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Tab from "./Tab.vue";
-import {computed, ref, watchEffect, onMounted,onBeforeMount,onBeforeUpdate} from "vue";
+import {computed, ref, watchEffect, onMounted} from "vue";
 
 export default {
   props: {
