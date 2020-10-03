@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$radius: 4px;
+$radius: 8px;
 $border-color: #d9d9d9;
 
 .lazyer-dialog {

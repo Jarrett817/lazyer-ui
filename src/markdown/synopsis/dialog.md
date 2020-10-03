@@ -1,0 +1,1 @@
+可用组件方式或导入openDialog函数，函数中传参打开dialog

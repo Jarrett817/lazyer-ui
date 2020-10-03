@@ -1,4 +1,4 @@
-<demo>  传参方式打开
+<demo>组件方式打开
 </demo>
 <template>
   <Button @click="toggle">toggle</Button>

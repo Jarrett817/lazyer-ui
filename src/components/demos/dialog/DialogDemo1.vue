@@ -1,4 +1,4 @@
-<demo>使用openDialog打开</demo>
+<demo>openDialog打开</demo>
 <template>
   <Button @click="showDialog">show</Button>
 </template>
