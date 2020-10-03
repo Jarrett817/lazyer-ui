@@ -70,7 +70,7 @@ export default {
   -o-user-select: none;
   user-select: none;
   //加上v-deep才能选中动态生成的span
-  & > ::v-deep span {
+  & > ::v-deep(span) {
     position: absolute;
     top: 0;
     left: 0;

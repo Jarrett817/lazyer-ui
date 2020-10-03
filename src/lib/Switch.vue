@@ -1,8 +1,8 @@
 <template>
-  <button ref="lazyerSwitchButton" class="lazyer-switch"
-          @click="toggle" :class="[{'lazyer-checked':value},classes]">
+  <button @click="toggle"  ref="lazyerSwitchButton"
+          :class="['lazyer-switch',{'lazyer-checked':value},classes]">
     <span :class="theme?theme:'lazyer-dot'">
-          <span v-if="theme&&!loading" class="arrow"> > </span>
+      <span v-if="theme&&!loading" class="arrow"> > </span>
       <span v-if="loading" class="lazyer-switch-loadingIndicator"></span>
     </span>
   </button>
@@ -23,10 +23,10 @@ export default {
     }
   },
   setup(props, context) {
-    const {value, loading, theme} = props;
+    const { loading, theme} = props;
     const toggle = () => {
-      // 上下文对象添加input事件，传值可在子组件中用$event获取
-      context.emit("update:value", !value);
+      context.emit("update:value", !props.value);
+
     };
     const lazyerSwitchButton = ref(null);
     onMounted(() => {
