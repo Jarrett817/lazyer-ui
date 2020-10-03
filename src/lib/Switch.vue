@@ -26,11 +26,11 @@ export default {
     const {value, loading, theme} = props;
     const toggle = () => {
       // 上下文对象添加input事件，传值可在子组件中用$event获取
-      context.emit("update:value", !props.value);
+      context.emit("update:value", !value);
     };
     const lazyerSwitchButton = ref(null);
     onMounted(() => {
-      if (props.loading) {
+      if (loading) {
         lazyerSwitchButton.value.disabled = true;
       }
     });
