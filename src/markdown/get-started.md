@@ -1,10 +1,10 @@
-# 开始使用
+## 开始使用
 请先[安装](#/doc/install)本组件库。
 
 导入库文件
 
 ```
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {Button, Tabs, Switch, Dialog} from "lazyer-ui"
 ```
 
 就可以使用我提供的组件了。

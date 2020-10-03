@@ -1,13 +1,15 @@
 <template>
-  <button ref="lazyerSwitchButton" class="lazyer-switch" @click="toggle" :class="{'lazyer-checked':value}">
-    <span class="lazyer-dot">
-          <span v-if="loading" class="lazyer-switch-loadingIndicator"></span>
+  <button ref="lazyerSwitchButton" class="lazyer-switch"
+          @click="toggle" :class="[{'lazyer-checked':value},classes]">
+    <span :class="theme?theme:'lazyer-dot'">
+          <span v-if="theme&&!loading" class="arrow"> > </span>
+      <span v-if="loading" class="lazyer-switch-loadingIndicator"></span>
     </span>
   </button>
 </template>
 
 <script lang="ts">
-import {onMounted, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 
 export default {
   props: {
@@ -15,9 +17,13 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    theme: {
+      type: String,
     }
   },
   setup(props, context) {
+    const {value, loading, theme} = props;
     const toggle = () => {
       // 上下文对象添加input事件，传值可在子组件中用$event获取
       context.emit("update:value", !props.value);
@@ -28,8 +34,13 @@ export default {
         lazyerSwitchButton.value.disabled = true;
       }
     });
+    const classes = computed(() => {
+      return {
+        [`lazyer-theme-${theme}`]: theme,
+      };
+    });
     return {
-      toggle,lazyerSwitchButton
+      toggle, lazyerSwitchButton, classes
     };
   },
 };
@@ -49,9 +60,49 @@ $h2: $h - 4px;
   border-radius: $h/2;
   position: relative;
 
-  &+&{
-    left:10px;
+  &.lazyer-theme-trendy {
+    background: $button-bg-blue;
+
+
+    & > span.trendy {
+      width: $h + 4px;
+      height: $h;
+      top: 0;
+      left: 0;
+      border-radius: $h;
+      background: $button-color-blue;
+      position: absolute;
+      transition: width 1s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .arrow {
+        color: white;
+      }
+    }
+
+    &.lazyer-checked {
+      background: $button-bg-blue;
+
+      > span.trendy {
+        width: $h*2;
+
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .lazyer-switch-loadingIndicator {
+      border-color: white transparent transparent transparent;
+    }
   }
+
+  & + & {
+    margin-left: 8px;
+  }
+
   &[disabled] {
     cursor: not-allowed;
   }
@@ -82,7 +133,7 @@ $h2: $h - 4px;
     }
   }
 
-  > span.lazyer-dot {
+  > span {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -91,9 +142,10 @@ $h2: $h - 4px;
     background: white;
     border-radius: $h/2;
     transition: all 250ms;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+
     .lazyer-switch-loadingIndicator {
       width: 14px;
       height: 14px;
@@ -115,7 +167,7 @@ $h2: $h - 4px;
   }
 
   &.lazyer-checked {
-    background: $main-blue;
+    background: $button-color-blue;
 
     > span.lazyer-dot {
       left: calc(100% - #{$h2} - 2px);
@@ -128,7 +180,7 @@ $h2: $h - 4px;
   }
 
   &:active {
-    > span {
+    > span.lazyer-dot {
       width: $h2 + 4px;
     }
   }
@@ -139,7 +191,5 @@ $h2: $h - 4px;
       margin-left: -4px;
     }
   }
-
-
 }
 </style>

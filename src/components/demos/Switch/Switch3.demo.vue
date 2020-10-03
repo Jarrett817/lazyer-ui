@@ -4,6 +4,8 @@
 <template>
   <Switch v-model:value="bool1" loading/>
   <Switch v-model:value="bool2" loading/>
+  <Switch theme="trendy" v-model:value="bool1" loading/>
+  <Switch theme="trendy" v-model:value="bool2" loading/>
 </template>
 
 <script lang="ts">

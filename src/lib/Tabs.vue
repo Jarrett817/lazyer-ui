@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "lazyer.scss";
-$blue: $main-blue;
+$blue: $button-color-blue;
 $color: #333;
 $border-color: #d9d9d9;
 .lazyer-tabs {

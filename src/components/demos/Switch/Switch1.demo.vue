@@ -2,7 +2,8 @@
 常规用法
 </demo>
 <template>
-  <Switch v-model:value="bool"/>
+  <Switch v-model:value="bool1"/>
+  <Switch theme="trendy" v-model:value="bool2"/>
 </template>
 <script lang="ts">
 
@@ -17,9 +18,10 @@ export default {
   },
 
   setup() {
-    const bool = ref(true);
+    const bool1 = ref(true);
+    const bool2 = ref(true);
     return {
-      bool
+      bool1,bool2
     };
   }
 };
