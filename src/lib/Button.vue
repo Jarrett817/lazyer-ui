@@ -92,9 +92,6 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: $main-blue;
-$radius: 4px;
-$red: $main-red;
 $grey: grey;
 
 
@@ -115,10 +112,11 @@ $grey: grey;
   background: white;
   color: $color;
   border: 1px solid $border-color;
-  border-radius: $radius;
+  border-radius: 16px;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
   position: relative;
+  overflow: hidden;
 
   & + & {
     margin-left: 8px;
@@ -126,8 +124,8 @@ $grey: grey;
 
   &:hover,
   &:focus {
-    color: $blue;
-    border-color: $blue;
+    color: $button-color-blue;
+    border-color: $button-color-blue;
   }
 
   &:focus {
@@ -143,6 +141,7 @@ $grey: grey;
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
+    border-radius: 32px;
   }
 
   &.lazyer-size-small {
@@ -163,26 +162,24 @@ $grey: grey;
     }
 
     &.lazyer-level-main {
-      background: $blue;
-      color: white;
-      border-color: $blue;
+      background: $button-bg-blue;
+      color: $button-color-blue;
+      border-color:transparent;
 
       &:hover,
       &:focus {
-        background: darken($blue, 10%);
-        border-color: darken($blue, 10%);
+        background: darken($button-bg-blue, 10%);
       }
     }
 
     &.lazyer-level-danger {
-      background: $red;
-      border-color: $red;
-      color: white;
+      background: $button-bg-red;
+      border-color: transparent;
+      color: $button-color-red;
 
       &:hover,
       &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
+        background: darken($button-bg-red, 10%);
       }
     }
   }
@@ -190,19 +187,19 @@ $grey: grey;
   &.lazyer-theme-link {
     border-color: transparent;
     box-shadow: none;
-    color: $blue;
+    color: $button-color-blue;
 
     &:hover,
     &:focus {
-      color: lighten($blue, 10%);
+      color: lighten($button-color-blue, 15%);
     }
 
     &.lazyer-level-danger {
-      color: $red;
+      color: $button-color-red;
 
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        color: lighten($button-color-red, 15%);
       }
     }
   }
@@ -218,20 +215,22 @@ $grey: grey;
     }
 
     &.lazyer-level-main {
-      color: $blue;
+      color: $button-color-blue;
 
       &:hover,
       &:focus {
-        color: darken($blue, 10%);
+        background:$button-bg-blue;
+        color: darken($button-color-blue, 10%);
       }
     }
 
     &.lazyer-level-danger {
-      color: $red;
+      color: $button-color-red;
 
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        background: $button-bg-red;
+        color: darken($button-color-red, 10%);
       }
     }
   }
@@ -245,12 +244,12 @@ $grey: grey;
   }
 
   > .lazyer-loadingIndicator {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
+    border-radius: 7px;
+    border-color: $button-color-blue $button-color-blue $button-color-blue transparent;
     border-style: solid;
     border-width: 2px;
     animation: lazyer-spin 1s infinite linear;

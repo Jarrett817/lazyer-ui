@@ -1,17 +1,25 @@
 <demo>加载状态</demo>
 <template>
-  <div>
-    <Button loading>加载中</Button>
-    <Button>加载完毕</Button>
-  </div>
+  <ol>
+    <li>
+      <Button loading>loading</Button>
+      <Button>done</Button>
+    </li>
+    <br />
+    <li>
+      <Button theme="link" loading>link-loading</Button>
+      <Button theme="text" loading>text-loading</Button>
+    </li>
+  </ol>
 </template>
 
 <script lang="ts">
 
 import Button from "../../../lib/Button.vue";
-export default{
+
+export default {
   components: {Button}
-}
+};
 </script>
 
 <style lang="scss" scoped>

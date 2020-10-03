@@ -1,10 +1,10 @@
 <demo>主题选项</demo>
 <template>
   <div>
-    <Button>默认</Button>
-    <Button theme="button">普通</Button>
-    <Button theme="link">链接</Button>
-    <Button theme="text">文本</Button>
+    <Button>default</Button>
+    <Button theme="button">button</Button>
+    <Button theme="link">link</Button>
+    <Button theme="text">text</Button>
   </div>
 </template>
 
@@ -16,5 +16,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

@@ -1,9 +1,9 @@
 <demo>波纹选项</demo>
 <template>
   <div>
-    <Button ripple>普通波纹</Button>
-    <Button theme="link" ripple>链接波纹</Button>
-    <Button theme="text" ripple>文本波纹</Button>
+    <Button ripple>default-ripple</Button>
+    <Button theme="link" ripple>link-ripple</Button>
+    <Button theme="text" ripple>text-ripple</Button>
   </div>
 </template>
 

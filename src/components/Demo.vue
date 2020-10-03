@@ -6,8 +6,8 @@
     <h5>{{ component.__sourceCodeTitle }}</h5>
     <div class="description">
       <div class="demo-actions">
-        <Button size="small" @click="hideCode" v-if="codeVisible">code</Button>
-        <Button size="small" @click="showCode" v-else>hide</Button>
+        <Button size="small" @click="hideCode" v-if="codeVisible">hide</Button>
+        <Button size="small" @click="showCode" v-else>code</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
         <pre class="language-html" v-html="html"/>
@@ -66,7 +66,6 @@ $border-color: #d9d9d9;
     margin-left: 10px;
     width:fit-content;
     padding:0 16px;
-    z-index:1;
     text-align: center;
   }
   .description {
@@ -86,13 +85,12 @@ $border-color: #d9d9d9;
 
   &-code {
     padding: 8px 16px;
-    //border-top: 1px dashed $border-color;
 
     > pre {
       line-height: 1.1;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
-      background: #f0f0f4;
+      overflow: auto;
     }
   }
 }

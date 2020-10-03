@@ -1,9 +1,9 @@
 <demo>禁用状态</demo>
 <template>
   <div>
-    <Button disabled>禁用按钮</Button>
-    <Button theme="link" disabled>禁用链接按钮</Button>
-    <Button theme="text" disabled>禁用文本按钮</Button>
+    <Button disabled>disabled</Button>
+    <Button theme="link" disabled>link-disabled</Button>
+    <Button theme="text" disabled>text-disabled</Button>
   </div>
 </template>
 

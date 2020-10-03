@@ -1,19 +1,21 @@
 <demo>尺寸选项</demo>
 <template>
   <div>
-    <Button size="big">大大大</Button>
-    <Button>普普通</Button>
-    <Button size="small">小小小</Button>
+    <Button size="big">bigSize</Button>
+    <Button>default</Button>
+    <Button size="small">small</Button>
   </div>
+  <br/>
   <div>
-    <Button theme="link" size="big">大大大</Button>
-    <Button theme="link">普普通</Button>
-    <Button size="small" theme="link">小小小</Button>
+    <Button theme="link" size="big">bigSize</Button>
+    <Button theme="link">default</Button>
+    <Button size="small" theme="link">small</Button>
   </div>
+  <br/>
   <div>
-    <Button size="big" theme="text">大大大</Button>
-    <Button theme="text">普普通</Button>
-    <Button size="small" theme="text">小小小</Button>
+    <Button size="big" theme="text">bigSize</Button>
+    <Button theme="text">default</Button>
+    <Button size="small" theme="text">small</Button>
   </div>
 </template>
 
