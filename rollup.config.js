@@ -10,8 +10,8 @@ export default {
         globals: {
             vue: 'Vue'
         },
-        name: 'layzer',
-        file: 'dist/lib/layzer.js',
+        name: 'lazyer',
+        file: 'dist/lib/lazyer.js',
         format: 'umd',
         plugins: [terser()]
     },
