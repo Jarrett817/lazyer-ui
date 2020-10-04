@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "lazyer.scss";
+@import "helper.scss";
 $blue: $button-color-blue;
 $color: #333;
 $border-color: #d9d9d9;

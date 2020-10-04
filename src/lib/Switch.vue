@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "lazyer.scss";
+@import "helper.scss";
 
 $h: 22px;
 $h2: $h - 4px;
