@@ -1550,6 +1550,7 @@ node-forge@0.9.0:
   integrity sha1-1iQFDtu0SHStyhK7mlLsY8t4JXk=
 
 node-sass@4, "node-sass@npm:sass@^1.26.11", sass@^1.26.11:
+  name node-sass
   version "1.26.11"
   resolved "https://registry.npm.taobao.org/sass/download/sass-1.26.11.tgz?cache=0&sync_timestamp=1600391895457&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass%2Fdownload%2Fsass-1.26.11.tgz#0f22cc4ab2ba27dad1d4ca30837beb350b709847"
   integrity sha1-DyLMSrK6J9rR1Mowg3vrNQtwmEc=
@@ -1873,7 +1874,7 @@ rollup-plugin-esbuild@^2.5.0:
     joycon "^2.2.5"
     strip-json-comments "^3.1.1"
 
-rollup-plugin-scss@^2.6.1:
+rollup-plugin-scss@^2.6.0:
   version "2.6.1"
   resolved "https://registry.npm.taobao.org/rollup-plugin-scss/download/rollup-plugin-scss-2.6.1.tgz#22826b4499f511aaf2edb8420faaf04a42e24a33"
   integrity sha1-IoJrRJn1Eary7bhCD6rwSkLiSjM=

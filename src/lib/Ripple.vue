@@ -13,7 +13,6 @@
 import {computed, createApp, h, ref} from "vue";
 
 export default {
-  props: {},
   setup() {
     const lazyerRippleElement = ref(null);
     const isMobile = computed(() => {
@@ -40,7 +39,9 @@ export default {
       const style = `top:${y}px;left:${x}px;width:${divWidth / 3}px; height:${divHeight / 3}px;`;
       const ripple = createApp({
         render() {
-          return h("span", {style}
+          return h("span", {
+                style,
+              }
           );
         }
       });
@@ -56,40 +57,35 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.lazyer-ripple-container > span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: lazyer-ripple 250ms;
+  width: 10px;
+  height: 10px;
 
+  @keyframes lazyer-ripple {
+    from {
+      opacity: 1;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 0;
+      transform: scale(9);
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 .lazyer-ripple-container {
   height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
-  //禁止文本选择
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
   user-select: none;
-  //加上v-deep才能选中动态生成的span
-  & > ::v-deep(span) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    animation: lazyer-ripple 250ms;
-    width: 10px;
-    height: 10px;
-
-    @keyframes lazyer-ripple {
-      from {
-        opacity: 1;
-        transform: scale(0.5);
-      }
-      to {
-        opacity: 0;
-        transform: scale(9);
-      }
-    }
-  }
 }
 </style>
