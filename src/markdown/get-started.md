@@ -9,6 +9,8 @@ import {Button, Tabs, Switch, Dialog} from "lazyer-ui"
 
 就可以使用我提供的组件了。
 
+[点击查看测试样例](https://jarrett817.github.io/lazyer-ui-test-preview/)
+
 ## Vue 单文件组件
 
 代码示例：

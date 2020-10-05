@@ -1,8 +1,8 @@
 ## 安装 
- `yarn add for-ui`
+ `yarn add lazyer-ui-1`
 
 or
 
-`npm install for-ui`
+`npm install lazyer-ui-1`
 
 下一节：[开始使用](#/doc/get-started)
