@@ -54,14 +54,14 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  background: rgb(216,235,248);
-  background: linear-gradient(145deg, rgba(216,235,248,1) 0%, rgba(227,242,252,1) 100%);
+  background: rgb(39,187,215);
+
 
   & .logo {
     max-width: 8em;
     margin-right: auto;
     font-size: 2em;
-    color: #4c4d5f;
+    color:white;
   }
 
   & .menu {

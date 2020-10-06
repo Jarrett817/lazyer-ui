@@ -17,38 +17,24 @@
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
 import AsideBar from "../components/AsideBar.vue";
-import {
-  inject,
-  Ref
-} from "vue";
 
 export default {
   components: {
     Topnav, AsideBar
   },
   setup() {
-    // const menuVisible = inject<Ref<boolean>>("menuVisible");
-    // return {
-    //   menuVisible,
-    // };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+::v-deep .menu{
+  color:white;
+}
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-  //.shade {
-  //  width: 100vw;
-  //  height: 100vh;
-  //  background: rgba(0,0,0,0.4);
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //}
 
   > .nav {
     flex-shrink: 0;

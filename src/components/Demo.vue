@@ -65,8 +65,9 @@ $border-color: #d9d9d9;
     margin-bottom: -10px;
     margin-left: 10px;
     width:fit-content;
+    width: -moz-fit-content;
     padding:0 16px;
-    text-align: center;
+    //display:inline;
   }
   .description {
     color: grey;
