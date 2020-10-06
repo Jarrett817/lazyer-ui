@@ -4,7 +4,6 @@
     <div class="layout">
       <Topnav class="nav" toggle-menu-button-visible/>
       <div class="content">
-<!--        <div class="shade"></div>-->
         <AsideBar></AsideBar>
         <main>
           <router-view></router-view>

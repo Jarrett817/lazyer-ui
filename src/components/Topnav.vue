@@ -11,7 +11,7 @@
     <svg
         v-if="toggleMenuButtonVisible"
         class="toggleAside" @click="toggleMenu">
-      <use xlink:href="#icon-caidan"></use>
+      <use xlink:href="#icon-caidan-copy"></use>
     </svg>
   </div>
 </template>

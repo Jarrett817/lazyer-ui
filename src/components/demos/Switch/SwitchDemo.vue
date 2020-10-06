@@ -16,7 +16,6 @@ import Synopsis from "../../Synopsis.vue";
 import switchMd from "../../../markdown/synopsis/switch.md"
 import Demo from "../../Demo.vue";
 
-
 export default {
   components: {
     Demo

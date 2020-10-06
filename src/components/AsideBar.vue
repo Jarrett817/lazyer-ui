@@ -26,6 +26,9 @@
       <li>
         <router-link to="/doc/tabs">Tabs</router-link>
       </li>
+      <li>
+        <router-link to="/doc/dropdown">Dropdown</router-link>
+      </li>
     </ol>
   </aside>
 </template>
@@ -46,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 
-$green:#01b289;
+$green: #01b289;
 aside {
   width: 150px;
   padding: 86px 16px 16px 16px;
@@ -55,8 +58,9 @@ aside {
   left: 0;
   height: 100%;
   box-shadow: .5px 0 .5px .5px rgba(0, 0, 0, 0.1);
-  background:white;
-  z-index:2;
+  background: white;
+  z-index: 2;
+
   > h2 {
     margin-bottom: 4px;
   }
@@ -67,7 +71,7 @@ aside {
 
       > a:hover {
         text-decoration: none;
-        color:$green ;
+        color: $green;
 
       }
 

@@ -46,7 +46,6 @@ export default {
         indicator.value.style.left = left + "px";
       }, {flush: "post"});
     });
-
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {

@@ -5,6 +5,7 @@ import SwitchDemo from "./components/demos/Switch/SwitchDemo.vue";
 import ButtonDemo from "./components/demos/button/ButtonDemo.vue";
 import DialogDemo from "./components/demos/dialog/DialogDemo.vue";
 import TabsDemo from "./components/demos/tabs/TabsDemo.vue";
+import DropdownDemo from "./components/demos/dropdown/DropdownDemo.vue"
 import {h} from "vue";
 import Markdown from "./components/MarkDown.vue";
 
@@ -25,10 +26,11 @@ export const router = createRouter(
                     {path: "intro", component: md(intro)},
                     {path: "get-started", component: md(getStarted)},
                     {path: "install", component: md(install)},
-                    {path: "Switch", component: SwitchDemo},
-                    {path: "Button", component: ButtonDemo},
-                    {path: "Dialog", component: DialogDemo},
-                    {path: "Tabs", component: TabsDemo}
+                    {path: "switch", component: SwitchDemo},
+                    {path: "button", component: ButtonDemo},
+                    {path: "dialog", component: DialogDemo},
+                    {path: "tabs", component: TabsDemo},
+                    {path: "dropdown",component:DropdownDemo}
                 ]
             }
         ]
