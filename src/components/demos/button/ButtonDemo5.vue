@@ -2,23 +2,22 @@
 <template>
   <ol>
     <li>
-      <Button loading>loading</Button>
-      <Button>done</Button>
+      <lazyer-button loading>loading</lazyer-button>
+      <lazyer-button>done</lazyer-button>
     </li>
     <br />
     <li>
-      <Button theme="link" loading>link-loading</Button>
-      <Button theme="text" loading>text-loading</Button>
+      <lazyer-button theme="link" loading>link-loading</lazyer-button>
+      <lazyer-button theme="text" loading>text-loading</lazyer-button>
     </li>
   </ol>
 </template>
 
 <script lang="ts">
-
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 
 export default {
-  components: {Button}
+  components: {LazyerButton}
 };
 </script>
 

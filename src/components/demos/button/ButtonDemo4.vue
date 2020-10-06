@@ -1,17 +1,17 @@
 <demo>禁用状态</demo>
 <template>
   <div>
-    <Button disabled>disabled</Button>
-    <Button theme="link" disabled>link-disabled</Button>
-    <Button theme="text" disabled>text-disabled</Button>
+    <lazyer-button disabled>disabled</lazyer-button>
+    <lazyer-button theme="link" disabled>link-disabled</lazyer-button>
+    <lazyer-button theme="text" disabled>text-disabled</lazyer-button>
   </div>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 
 export default {
-  components: {Button}
+  components: {LazyerButton}
 }
 </script>
 

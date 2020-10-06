@@ -1,17 +1,17 @@
 <demo>主题选项</demo>
 <template>
   <div>
-    <Button>default</Button>
-    <Button theme="button">button</Button>
-    <Button theme="link">link</Button>
-    <Button theme="text">text</Button>
+    <lazyer-button>default</lazyer-button>
+    <lazyer-button theme="button">button</lazyer-button>
+    <lazyer-button theme="link">link</lazyer-button>
+    <lazyer-button theme="text">text</lazyer-button>
   </div>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 export default {
-  components: {Button},
+  components: {LazyerButton},
 }
 </script>
 

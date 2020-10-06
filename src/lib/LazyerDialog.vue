@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import Button from "./Button.vue";
+import Button from "./LazyerButton.vue";
 
 export default {
   // inheritAttrs: false,

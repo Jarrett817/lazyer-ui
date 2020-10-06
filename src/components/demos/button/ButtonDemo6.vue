@@ -1,16 +1,16 @@
 <demo>波纹选项</demo>
 <template>
   <div>
-    <Button ripple>default-ripple</Button>
-    <Button theme="link" ripple>link-ripple</Button>
-    <Button theme="text" ripple>text-ripple</Button>
+    <lazyer-button ripple>default-ripple</lazyer-button>
+    <lazyer-button theme="link" ripple>link-ripple</lazyer-button>
+    <lazyer-button theme="text" ripple>text-ripple</lazyer-button>
   </div>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 export default  {
-  components: {Button}
+  components: {LazyerButton}
 }
 </script>
 

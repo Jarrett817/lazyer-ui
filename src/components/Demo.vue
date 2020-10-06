@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import Button from "../lib/Button.vue";
+import Button from "../lib/LazyerButton.vue";
 import "prismjs";
 import "../assets/style/prism.css";
 import "../assets/style/prism-coy.css";

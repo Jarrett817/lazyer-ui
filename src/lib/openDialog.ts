@@ -1,4 +1,4 @@
-import Dialog from "./Dialog.vue";
+import LazyerDialog from "./LazyerDialog.vue";
 import {createApp, h} from "vue";
 
 export const openDialog = (options) => {
@@ -11,7 +11,7 @@ export const openDialog = (options) => {
     }
     const app = createApp({
         render() {
-            return h(Dialog, {
+            return h(LazyerDialog, {
                     visible: true,
                     "onUpdate:visible": (newVisible) => {
                         if (newVisible === false) {

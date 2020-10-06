@@ -2,22 +2,22 @@
 加载状态
 </demo>
 <template>
-  <Switch v-model:value="bool1" loading/>
-  <Switch v-model:value="bool2" loading/>
-  <Switch theme="trendy" v-model:value="bool1" loading/>
-  <Switch theme="trendy" v-model:value="bool2" loading/>
+  <lazyer-switch v-model:value="bool1" loading/>
+  <lazyer-switch v-model:value="bool2" loading/>
+  <lazyer-switch theme="trendy" v-model:value="bool1" loading/>
+  <lazyer-switch theme="trendy" v-model:value="bool2" loading/>
 </template>
 
 <script lang="ts">
 
-import Switch from "../../../lib/Switch.vue";
+import {LazyerSwitch} from "../../../lib";
 import {
   ref
 } from "vue";
 
 export default {
   components: {
-    Switch
+    LazyerSwitch
   },
 
   setup() {

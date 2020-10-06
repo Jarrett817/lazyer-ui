@@ -14,7 +14,7 @@
 <script lang="ts">
 import Synopsis from "../../Synopsis.vue";
 import Demo from "../../Demo.vue";
-import Button from "../../../lib/Button.vue";
+import Button from "../../../lib/LazyerButton.vue";
 import ButtonDemo1 from "./ButtonDemo1.vue";
 import ButtonDemo2 from "./ButtonDemo2.vue";
 import ButtonDemo3 from "./ButtonDemo3.vue";

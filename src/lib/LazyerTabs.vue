@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import Tab from "./Tab.vue";
+import Tab from "./LazyerTabsItem.vue";
 import {computed, ref, watchEffect, onMounted} from "vue";
 
 export default {

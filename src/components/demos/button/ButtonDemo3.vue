@@ -2,29 +2,29 @@
 <template>
   <div>
     <div>
-      <Button level="main">main</Button>
-      <Button>default</Button>
-      <Button level="danger">danger</Button>
+      <lazyer-button level="main">main</lazyer-button>
+      <lazyer-button>default</lazyer-button>
+      <lazyer-button level="danger">danger</lazyer-button>
     </div>
     <br/>
     <div>
-      <Button theme="link" level="main">link-main</Button>
-      <Button theme="link">link-default</Button>
-      <Button theme="link" level="danger">link-danger</Button>
+      <lazyer-button theme="link" level="main">link-main</lazyer-button>
+      <lazyer-button theme="link">link-default</lazyer-button>
+      <lazyer-button theme="link" level="danger">link-danger</lazyer-button>
     </div>
     <br/>
     <div>
-      <Button theme="text" level="main">text-main</Button>
-      <Button theme="text">text-default</Button>
-      <Button theme="text" level="danger">text-danger</Button>
+      <lazyer-button theme="text" level="main">text-main</lazyer-button>
+      <lazyer-button theme="text">text-default</lazyer-button>
+      <lazyer-button theme="text" level="danger">text-danger</lazyer-button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 export default {
-  components: {Button}
+  components: {LazyerButton}
 };
 </script>
 

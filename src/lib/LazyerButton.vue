@@ -3,9 +3,9 @@
     <!-- <button v-bind="$attrs">-->
     <span v-if="loading" class="lazyer-loadingIndicator"></span>
     <slot/>
-    <div class="rippleWrapper" v-if="ripple">
+    <span class="rippleWrapper" v-if="ripple">
       <Ripple/>
-    </div>
+    </span>
   </button>
 </template>
 

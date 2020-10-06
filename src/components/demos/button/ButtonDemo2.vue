@@ -1,29 +1,29 @@
 <demo>尺寸选项</demo>
 <template>
   <div>
-    <Button size="big">bigSize</Button>
-    <Button>default</Button>
-    <Button size="small">small</Button>
+    <lazyer-button size="big">bigSize</lazyer-button>
+    <lazyer-button>default</lazyer-button>
+    <lazyer-button size="small">small</lazyer-button>
   </div>
   <br/>
   <div>
-    <Button theme="link" size="big">bigSize</Button>
-    <Button theme="link">default</Button>
-    <Button size="small" theme="link">small</Button>
+    <lazyer-button theme="link" size="big">bigSize</lazyer-button>
+    <lazyer-button theme="link">default</lazyer-button>
+    <lazyer-button size="small" theme="link">small</lazyer-button>
   </div>
   <br/>
   <div>
-    <Button size="big" theme="text">bigSize</Button>
-    <Button theme="text">default</Button>
-    <Button size="small" theme="text">small</Button>
+    <lazyer-button size="big" theme="text">bigSize</lazyer-button>
+    <lazyer-button theme="text">default</lazyer-button>
+    <lazyer-button size="small" theme="text">small</lazyer-button>
   </div>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
+import {LazyerButton} from "../../../lib";
 
 export default {
-  components: {Button}
+  components: {LazyerButton}
 };
 </script>
 

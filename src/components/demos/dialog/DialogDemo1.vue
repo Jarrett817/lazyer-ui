@@ -1,15 +1,15 @@
 <demo>openDialog打开</demo>
 <template>
-  <Button @click="showDialog">show</Button>
+  <lazyer-button @click="showDialog">show</lazyer-button>
 </template>
 
 <script lang="ts">
-import Button from "../../../lib/Button.vue";
 import {openDialog} from "../../../lib/openDialog";
+import {LazyerButton} from "../../../lib";
 
 export default {
   components: {
-    Button,
+    LazyerButton,
   },
   setup() {
     const showDialog = () => {

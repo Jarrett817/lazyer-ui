@@ -1,8 +1,8 @@
 <demo>组件方式打开
 </demo>
 <template>
-  <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="x" :closeOnClickOverlay="true"
+  <lazyer-button @click="toggle">toggle</lazyer-button>
+  <lazyer-dialog v-model:visible="x" :closeOnClickOverlay="true"
           :ok="f1" :cancel="f2">
     <template v-slot:content>
       <div>hello</div>
@@ -11,23 +11,22 @@
     <template v-slot:title>
       <strong>加粗标题</strong>
     </template>
-  </Dialog>
+  </lazyer-dialog>
 </template>
 
 <script lang="ts">
-import Dialog from "../../../lib/Dialog.vue";
-import Button from "../../../lib/Button.vue";
 import {ref} from "vue";
+import {LazyerDialog} from "../../../lib";
+import {LazyerButton} from "../../../lib";
 
 export default {
   components: {
-    Dialog,
-    Button,
+    LazyerButton,
+    LazyerDialog,
   },
   setup() {
     const x = ref(false);
     const toggle = () => {
-      console.log(x.value);
       x.value = !x.value;
     };
     const f1 = () => {

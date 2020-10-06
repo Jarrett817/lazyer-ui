@@ -2,22 +2,22 @@
 禁用状态
 </demo>
 <template>
-  <Switch v-model:value="bool1" disabled/>
-  <Switch v-model:value="bool2" disabled/>
-  <Switch theme="trendy" v-model:value="bool2" disabled/>
-  <Switch theme="trendy" v-model:value="bool1" disabled/>
+  <lazyer-switch v-model:value="bool1" disabled/>
+  <lazyer-switch v-model:value="bool2" disabled/>
+  <lazyer-switch theme="trendy" v-model:value="bool2" disabled/>
+  <lazyer-switch theme="trendy" v-model:value="bool1" disabled/>
 </template>
 
 <script lang="ts">
 
-import Switch from "../../../lib/Switch.vue";
+import {LazyerSwitch} from "../../../lib";
 import {
   ref
 } from "vue";
 
 export default {
   components: {
-    Switch
+    LazyerSwitch
   },
 
   setup() {
