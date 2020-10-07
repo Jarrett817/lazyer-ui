@@ -7,10 +7,10 @@
       </svg>
     </header>
     <main>
-      <component v-for="(item,index) in contents" :is="item"
-                 :key="contents[index].props.key"
+      <component v-for="item in contents" :is="item"
+                 :key="item.props.key"
                  :ref="setItemRef"
-      />
+     />
     </main>
   </div>
 </template>
@@ -37,16 +37,19 @@ export default {
     let itemRefs = [];
     const setItemRef = e => {
       itemRefs.push(e);
+      console.log('插槽：')
       console.log(e)
+      console.log('获取插槽内元素：')
       console.log(e.$el)
+      console.log('获取元素的高')
       console.log(e.$el.getBoundingClientRect())
     };
-    onBeforeUpdate(() => {
-      itemRefs = [];
-    });
-    onUpdated(() => {
-      console.log(itemRefs);
-    });
+    // onBeforeUpdate(() => {
+    //   itemRefs = [];
+    // });
+    // onUpdated(() => {
+    //   console.log(itemRefs);
+    // });
 
     const contents = computed(() => context.slots.content());
     return {
@@ -96,6 +99,6 @@ main {
   border-radius: 4px;
   line-height: 32px;
   overflow: hidden;
-  max-height: 0;
+  //max-height: 0;
 }
 </style>
