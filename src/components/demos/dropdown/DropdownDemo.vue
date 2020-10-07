@@ -10,11 +10,13 @@
 import Demo from "../../Demo.vue";
 import dropdownMd from '../../../markdown/synopsis/dropdown.md';
 import DropdownDemo1 from "./DropdownDemo1.vue";
+import Synopsis from "../../Synopsis.vue";
+
 export default  {
   components: {Demo},
   setup(){
     return{
-      dropdownMd,DropdownDemo1
+      dropdownMd,DropdownDemo1,Synopsis
     }
   }
 }

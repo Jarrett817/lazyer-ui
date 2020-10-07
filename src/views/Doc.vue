@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .menu{
+::v-deep(.menu){
   color:white;
 }
 .layout {

@@ -1,6 +1,6 @@
 <template>
-  <div class="item">
-    <slot/>
+  <div>
+      <slot/>
   </div>
 </template>
 
@@ -15,11 +15,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.item{
-  &:hover{
-    background:#e6f7ff;
-    margin:0 -10px;
+::v-deep(a) {
+  display: block;
+  padding: 5px 12px;
+
+  &:hover {
+    background: #e6f7ff;
     text-align: center;
+    text-decoration: none;
   }
 }
 </style>

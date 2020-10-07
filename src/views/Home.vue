@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .topNav {
+::v-deep(.topNav) {
   background: rgba(0, 0, 0, 0);
 }
 

@@ -57,7 +57,6 @@ export default {
         return tag.props.title === props.selected;
       });
     });
-
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
@@ -71,7 +70,7 @@ export default {
       current,
       selectedItem,
       indicator,
-      container
+      container,
     };
   }
 };
@@ -79,6 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "helper.scss";
+
 $blue: $button-color-blue;
 $color: #333;
 $border-color: #d9d9d9;
@@ -88,6 +88,7 @@ $border-color: #d9d9d9;
     color: $color;
     border-bottom: 1px solid $border-color;
     position: relative;
+
     &-indicator {
       position: absolute;
       height: 3px;
@@ -97,6 +98,7 @@ $border-color: #d9d9d9;
       width: 100px;
       transition: all 250ms;
     }
+
     &-item {
       padding: 8px 0;
       margin: 0 16px;
