@@ -4,10 +4,10 @@
 导入库文件
 
 ```
-import {Button, Tabs, Switch, Dialog} from "lazyer-ui"
+import {LazyerButton, LazyerTabs, LazyerTabsItem, LazyerSwitch, LazyerDialog, openDialog, LazyerDropdown, LazyerMenuItem} from "lazyer-ui-1"
 ```
 
-就可以使用我提供的组件了。
+可按需引入。
 
 [点击查看测试样例](https://jarrett817.github.io/lazyer-ui-test-preview/)
 
@@ -18,13 +18,13 @@ import {Button, Tabs, Switch, Dialog} from "lazyer-ui"
 ```
 <template>
   <div>
-    <Button>按钮</Button>
+    <LazyerButton>按钮</LazyerButton>
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {LazyerButton} from "lazyer-ui-1"
 export default {
-  components: {Button}
+  components: {LazyerButton}
 }
 </script>
 ```
