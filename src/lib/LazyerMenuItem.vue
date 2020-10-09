@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lazyer-menu">
       <slot/>
   </div>
 </template>
@@ -14,8 +14,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-::v-deep(a) {
+<style lang="scss">
+.lazyer-menu a {
   display: block;
   padding: 5px 12px;
 

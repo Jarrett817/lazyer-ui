@@ -6,7 +6,7 @@
         <use xlink:href="#icon-xiala"></use>
       </svg>
     </span>
-    <main ref="lazyerMainElement">
+    <main class="lazyer-dropdown-main" ref="lazyerMainElement">
       <component v-for="item in contents" :is="item"
                  :key="item.props.key"
                  :ref="el=>{itemRefs.push(el)}"
@@ -80,7 +80,7 @@ span {
   }
 }
 
-main {
+.lazyer-dropdown-main {
   width: fit-content;
   background: #ffffff;
   box-shadow: 0 0 3px #d9d9d9,
