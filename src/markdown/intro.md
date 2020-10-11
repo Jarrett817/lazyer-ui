@@ -2,7 +2,7 @@
 
 Lazyer UI 是一款基于 Vue 3 、 TypeScript，使用Scss编写样式 的 UI 组件库。
 
-使用了vue3 Component API，代码可读性强
+使用了vue3 Composition API，代码可读性强
 
 组件功能精简易用，部分参考自ant design vue版、Element UI 及 Vuetify
 
