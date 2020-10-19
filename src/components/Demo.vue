@@ -40,7 +40,7 @@ export default {
     });
     const showCode = () => codeVisible.value = true;
     const hideCode = () => codeVisible.value = false;
-    const codeVisible = ref(false);
+    const codeVisible = ref(true);
     return {
       Prism,
       html,
